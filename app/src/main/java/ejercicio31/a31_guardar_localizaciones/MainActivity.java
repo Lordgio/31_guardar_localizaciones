@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        gloc=new GestionLocalizacion(this,"posiciones");
+        gloc=new GestionLocalizacion(this,"posicion");
         lst=(ListView)this.findViewById(R.id.lstLoc);
         lm=(LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
         try {
-            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 10, new CambioLocalizacion());
+            lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 3000, 10, new CambioLocalizacion());
         }catch(SecurityException ex){
             ex.printStackTrace();
         }

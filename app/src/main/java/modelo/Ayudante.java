@@ -19,7 +19,7 @@ public class Ayudante extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         //Se le llama para construir las tablas de la base de datos.
         //Instruccion SQL de creacion de una tabla.
-        String sqlCrearTabla="create table localizacion (_id integer primary key autoincrement,";
+        String sqlCrearTabla="create table posicion (_id integer primary key autoincrement,";
         sqlCrearTabla+="latitud double,longitud double)";
         //Ejecutamos la instrucción.
         db.execSQL(sqlCrearTabla);
